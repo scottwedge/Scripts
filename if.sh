@@ -1,10 +1,10 @@
 #!/bin/bash
 
-J=100
+J="100 900"
 
 echo "${J}"
 
-if [[ "${J}" -eq 100  ]]
+if [[ "${J}" == "100 900"  ]]
 then
   echo "ok"
 else
