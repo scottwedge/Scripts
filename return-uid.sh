@@ -8,7 +8,7 @@ function r()
 {
     echo "UID is ${UID}"
     j=${UID}
-    exit 251
+    return 251
 }
 
 
