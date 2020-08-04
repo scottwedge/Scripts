@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script is used for variable practice.
 
 SKILL="shell script"
 
