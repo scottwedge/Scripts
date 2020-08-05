@@ -1,0 +1,32 @@
+.:
+total 64
+-rw-r--r-- 1 swedge swedge    0 Aug  5 12:42 file_listing.txt
+-rw-r--r-- 1 swedge swedge 1242 Aug  5 12:38 awk2.sh
+-rwxrwxrwx 1 swedge swedge   66 Aug  4 22:51 awk1.sh
+-rwxr-xr-x 1 swedge swedge  245 Aug  4 22:08 case_VAR.sh
+-rwxrwxrwx 1 swedge swedge  299 Aug  4 21:42 Capitalize_VAR.sh
+-rwxr-xr-x 1 swedge swedge  254 Aug  3 20:39 simple_var.sh
+-rwxrwxrwx 1 swedge swedge  396 Aug  2 23:42 return-value.sh
+-rwxrwxrwx 1 swedge swedge  263 Aug  1 23:14 read_user_input.sh
+-rwxrwxrwx 1 swedge swedge  279 Jul 31 22:50 exit-uid.sh
+-rwxrwxrwx 1 swedge swedge  204 Jul 31 22:44 return-uid.sh
+-rwxr-xr-x 1 swedge swedge  297 Jul 29 16:15 got-root.sh
+-rwxr-xr-x 1 swedge swedge  111 Jul 29 15:42 if.sh
+-rwxr-xr-x 1 swedge swedge  796 Jul 27 23:52 rename_provided_file.sh
+-rwxrwxrwx 1 swedge swedge  358 Jul 26 23:55 rename_file.sh
+drwxr-xr-x 3 swedge swedge 4096 Jul 25 21:55 results
+-rwxrwxrwx 1 swedge swedge  397 Jul 25 21:53 record_game_output.sh
+-rwxrwxrwx 1 swedge swedge  371 Jul 24 21:31 place_ship_in_small_grid.sh
+
+./results:
+total 4
+drwxr-xr-x 2 swedge swedge 4096 Jul 28 23:11 record_game_output
+
+./results/record_game_output:
+total 724
+-rwxrwxrwx 1 swedge swedge    412 Jul 28 23:11 awk_reorder.sh
+-rw-r--r-- 1 swedge swedge 144740 Jul 25 21:54 t5
+-rw-r--r-- 1 swedge swedge 144737 Jul 25 21:54 t4
+-rw-r--r-- 1 swedge swedge 144737 Jul 25 21:54 t3
+-rw-r--r-- 1 swedge swedge 144733 Jul 25 21:54 t2
+-rw-r--r-- 1 swedge swedge 144739 Jul 25 21:54 t1

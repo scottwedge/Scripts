@@ -3,6 +3,9 @@
 # Using NR and $NF in awk statements to show line number and last column with other data
 # Then match string 'xxxxx' using /xxxxx/ inside awk quotes
 
+# Comment out following lines with ": '" on top line and ":" below last line
+
+: '                  # start of multiline bash comment
  1469  cat t1 | grep COUNT | awk {print $9 "of" $8}
  1470  history | grep awk
  1471  cat t1 | grep COUNT | awk '{print $9 "of" $8}'
@@ -31,3 +34,8 @@
  2124  awk  '/rwx/ {print NR, $5, $NF}' t
  2126  awk  '/rw/ {print NR, $5, $NF}' t
  2127  history | grep awk > awk2.sh
+ '         # end of multiline bash comment
+
+ echo "hello"
+
+
