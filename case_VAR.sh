@@ -14,7 +14,7 @@ case ${VAR3} in
 "car2") echo "you entered car2"
 	;;
 
-*) echo "you entered something"
+*) echo "you entered ${VAR3}"
    ;;
 
 esac
