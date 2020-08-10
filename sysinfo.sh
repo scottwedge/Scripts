@@ -15,8 +15,9 @@ echo "Running on host $HOSTNAME"
 echo "Date and time is: `date`"
 
 # Display the kernel release followed by the architecture.
-echo "Kernel release is: `uname -r` and architecture is: `uname -s`"
+echo "Kernel release is: `uname -r` and architecture is: `uname -m`"
 
 # Display the disk usage in a human readable format.
+echo "Disk usage in human readable format is: `du -hk`"
 
 # End the script by letting the user know that it is done.
