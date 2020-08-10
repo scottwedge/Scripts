@@ -18,6 +18,7 @@ echo "Date and time is: `date`"
 echo "Kernel release is: `uname -r` and architecture is: `uname -m`"
 
 # Display the disk usage in a human readable format.
-echo "Disk usage in human readable format is: `du -hk`"
+echo "Disk usage in human readable format is: `df -h`"
 
 # End the script by letting the user know that it is done.
+echo "The script has completed."
