@@ -28,9 +28,14 @@ for j in read_file:
         valid = False  # contains "_" so is made up word
     elif j.lower().capitalize() == j: 
         valid = True  # word is capitalized
-    el
+    elif j.lower().capitalize() != j:
+        valid = False    # there are capitals in the middle of the word so probably made-up
 
-
-
-
+    if valid:
         write_file.write(j)
+        print("VALID:", j)
+    else:
+        fail_file.write(j)
+        print("INVALID:", j)
+
+
