@@ -24,6 +24,8 @@ for j in read_file:
     
     if j.lower() == j:
         valid = True  # all lower case
+    elif j.upper() == j:
+        valid = True  # all upper case
     elif "_" in j:
         valid = False  # contains "_" so is made up word
     elif j.lower().capitalize() == j: 
