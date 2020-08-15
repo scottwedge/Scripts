@@ -10,9 +10,9 @@
     Assumes output of valid words in in local file 'temp_out'.
 """
 # declare variables and constants
-FILE_IN = "temp_in"
-FILE_OUT = "temp_out"
-FILE_OUT_INVALID = "temp_fail"
+FILE_IN = "/tmp/temp_input.txt"
+FILE_OUT = "/tmp/temp_output.txt"
+FILE_OUT_INVALID = "/tmp/temp_fail.txt"
 
 # Open files to read from and to write to
 read_file = open(FILE_IN, "r")
