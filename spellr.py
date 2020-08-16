@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 
-""" Script that will evaluate each word.
+""" Script assumes that shell script has generated file where each line
+    begins with suspect word, followed by file and line number
+    
+    This script evaluates each suspect word.
     If word seems valid, then write to write_file
 
     Word is not valid if it contains "_" (ie 'first_field').
     Word is not valid if it has a mix of upper case in middle of word (ie- madeUpWorddd)
 
-    Assumes list of words to be checked is in local file 'temp_in'.
-    Assumes output of valid words in in local file 'temp_out'.
+    Assumes list of words to be checked is in file '/tmp/temp_in.txt'.
+    Assumes output of valid words in in file '/tmp/temp_out.txt'.
 """
 # declare variables and constants
 FILE_IN = "/tmp/temp_input.txt"
@@ -19,9 +22,15 @@ read_file = open(FILE_IN, "r")
 write_file = open(FILE_OUT, "a")
 fail_file = open(FILE_OUT_INVALID, "a")
 
-for j in read_file:
+# Initialize variables
+suspect_word_list = []
+invalid_word_list = []
+
+for k in read_file:
+    j = k.split()[0]
     valid = True
-    
+    print(j)
+   
     if j.lower() == j:
         valid = True  # all lower case
     elif j.upper() == j:
@@ -38,6 +47,6 @@ for j in read_file:
         print("VALID:", j)
     else:
         fail_file.write(j)
-        print("INVALID:", j)
+        print("INVALID__________________:", j)
 
 
