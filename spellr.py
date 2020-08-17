@@ -44,9 +44,16 @@ for k in read_file:
 
     if valid:
         write_file.write(j)
+        write_file.write("\n")
         print("VALID:", j)
+        if j not in suspect_word_list:
+            suspect_word_list.append(j)
     else:
         fail_file.write(j)
+        fail_file.write("\n")
         print("INVALID__________________:", j)
+        if j not in invalid_word_list:
+            invalid_word_list.append(j)
 
-
+print("Suspect word list:", suspect_word_list)
+print("INVALID word list:", invalid_word_list)
