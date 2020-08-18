@@ -18,15 +18,11 @@ for (m,n) in l:
    IF no, then add to list with a value of 1
 """   
 d = [{"hello": 3}, {"there":2}, {"handsome":1}]
-e = ["hello", "hello", "mellow"]
+e = ["hello", "jello", "mellow"]
 
-"""
+
 for j in e:
-    if  j in d:
-        d[{j}] = d[{j}] + 1
-    else:
-        d[{j}] = 1
-"""
-
+    if j in d.keys == True:
+        d[j] = d[j] + 1
 
 print(d)
