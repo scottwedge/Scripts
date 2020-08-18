@@ -1,15 +1,25 @@
 #!/bin/bash
 
+# Grab first optional argument and analyze it
+# If it is --h or --help or -h or -help then display help
+# else it will be the list of words caught by 'spell -no'
+
+if [ $# -gt 0 ]; then
+    TEMP_FILE=$1
+else
+    TEMP_FILE="/tmp/temp.txt"
+    rm -f ${TEMP_FILE}
+fi
+
+
 # First part of script grabs suspect misspelled words
 # with "spell -no" that lists file, then line number, then suspect word
 
-TEMP_FILE="/tmp/temp.txt"
 OUTPUT_FILE="/tmp/temp_input.txt"
 
-rm -f ${TEMP_FILE}
 rm -f ${OUTPUT_FILE}
 
-spell -no *.sh >> $TEMP_FILE
+#spell -no *.sh >> $TEMP_FILE
 #spell -no */* >> $TEMP_FILE
 
 
@@ -23,5 +33,5 @@ spell -no *.sh >> $TEMP_FILE
 
 cat ${TEMP_FILE} | awk -F: '{ print $3, $1 ":" $2 }' > ${OUTPUT_FILE}
 
-# Then invoke the python script 
-./spellr.py
+# Then invoke the python script (using absolute path)
+/home/swedge/Documents/GIT/scripts/spellr.py
