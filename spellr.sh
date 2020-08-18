@@ -1,15 +1,37 @@
 #!/bin/bash
 
+# Define functions
+function help_usage() {
+echo "Command format is 'spellr.sh' followed by absolute path to txt file to be analyzed"
+echo "For example:  spellr.sh /tmp/t"
+}
+
 # Grab first optional argument and analyze it
 # If it is --h or --help or -h or -help then display help
-# else it will be the list of words caught by 'spell -no'
+# else it should  be the text file with list of words caught by 'spell -no'
 
 if [ $# -gt 0 ]; then
-    TEMP_FILE=$1
+    if [ $# -gt 1 ]; then
+	echo "Error: too many arguments"
+	help_usage
+    else
+        if [ $1 == "-h" ]; then
+	    help_usage
+	elif [ $1 == "--h" ]; then
+	    help_usage
+        elif [ $1 == "-help" ]; then
+            help_usage
+        elif [ $1 == "--help" ]; then
+            help_usage
+        else	    
+            TEMP_FILE=$1
+        fi
+    fi
 else
     TEMP_FILE="/tmp/temp.txt"
     rm -f ${TEMP_FILE}
 fi
+
 
 
 # First part of script grabs suspect misspelled words
