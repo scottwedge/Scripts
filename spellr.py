@@ -22,14 +22,14 @@ read_file = open(FILE_IN, "r")
 write_file = open(FILE_OUT, "a")
 fail_file = open(FILE_OUT_INVALID, "a")
 
-# Initialize variables
-suspect_word_list = []
-invalid_word_list = []
+# Initialize variables as dictionary
+suspect_word_list = {}
+invalid_word_list = {}
 
 for k in read_file:
     j = k.split()[0]
+    j1 = k.split()[1]
     valid = True
-    print(j)
    
     if j.lower() == j:
         valid = True  # all lower case
@@ -46,14 +46,26 @@ for k in read_file:
         write_file.write(j)
         write_file.write("\n")
         print("VALID:", j)
-        if j not in suspect_word_list:
-            suspect_word_list.append(j)
+        if j in suspect_word_list.keys():
+            suspect_word_list[j] = suspect_word_list[j] + 1   # increment count
+        else:
+            suspect_word_list[j] = 1   #First time with this word so count = 1
     else:
         fail_file.write(j)
         fail_file.write("\n")
         print("INVALID__________________:", j)
-        if j not in invalid_word_list:
-            invalid_word_list.append(j)
+        if j in invalid_word_list:
+            invalid_word_list[j] = invalid_word_list[j] + 1
+        else:
+            invalid_word_list[j] = 1
+
+# sort from least to most common
+suspect_word_list = list(suspect_word_list.items())
+invalid_word_list = list(invalid_word_list.items())
+
+
+suspect_word_list.sort(key = lambda x: x[1])
+invalid_word_list.sort(key = lambda x: x[1])
 
 print("Suspect word list:", suspect_word_list)
 print("INVALID word list:", invalid_word_list)
