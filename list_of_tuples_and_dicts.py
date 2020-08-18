@@ -17,12 +17,12 @@ for (m,n) in l:
    If yes then increment count (the value)
    IF no, then add to list with a value of 1
 """   
-d = [{"hello": 3}, {"there":2}, {"handsome":1}]
+d = {"hello": 3, "there":2, "handsome":1}
 e = ["hello", "jello", "mellow"]
 
 
 for j in e:
-    if j in d.keys == True:
+    if j in d.keys():
         d[j] = d[j] + 1
 
 print(d)
