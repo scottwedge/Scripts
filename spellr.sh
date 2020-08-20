@@ -1,8 +1,11 @@
 #!/bin/bash
 
+# Simple script that runs 'spell -no' against a directory and all its contents
+# and then reorders the output of that command
+
 # Define functions
 function help_usage() {
-echo "Command format is 'spellr.sh' followed by absolute path to txt file to be analyzed"
+echo "Command format is 'spellr.sh' followed by absolute path to text file to be analyzed"
 echo "For example:  spellr.sh /tmp/t"
 }
 
@@ -33,6 +36,7 @@ else
 fi
 
 
+echo "Current directory is $PWD _____________________" # DEBUG command
 
 # First part of script grabs suspect misspelled words
 # with "spell -no" that lists file, then line number, then suspect word
