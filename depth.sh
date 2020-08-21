@@ -4,8 +4,5 @@
 
 echo "Currently at directory $PWD"
 
-`ls -l $PWD/* ` > /tmp/s
+ls -l ${PWD} | grep drw
 
-if [ cat /tmp/s | grep "drw" ]; then
-	echo "directory"
-fi
