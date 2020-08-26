@@ -26,38 +26,42 @@ fail_file = open(FILE_OUT_INVALID, "a")
 suspect_word_list = {}
 invalid_word_list = {}
 
-for k in read_file:
-    j = k.split()[0]
-    j1 = k.split()[1]
-    valid = True
+try:
+    for k in read_file:
    
-    if j.lower() == j:
-        valid = True  # all lower case
-    elif j.upper() == j:
-        valid = True  # all upper case
-    elif "_" in j:
-        valid = False  # contains "_" so is made up word
-    elif j.lower().capitalize() == j: 
-        valid = True  # word is capitalized
-    elif j.lower().capitalize() != j:
-        valid = False    # there are capitals in the middle of the word so probably made-up
+        j = k.split()[0]
+        j1 = k.split()[1]
+        valid = True
+   
+        if j.lower() == j:
+            valid = True  # all lower case
+        elif j.upper() == j:
+            valid = True  # all upper case
+        elif "_" in j:
+            valid = False  # contains "_" so is made up word
+        elif j.lower().capitalize() == j: 
+            valid = True  # word is capitalized
+        elif j.lower().capitalize() != j:
+            valid = False    # there are capitals in the middle of the word so probably made-up
 
-    if valid:
-        write_file.write(j)
-        write_file.write("\n")
-        print("VALID:", j)
-        if j in suspect_word_list.keys():
-            suspect_word_list[j] = suspect_word_list[j] + 1   # increment count
+        if valid:
+            write_file.write(j)
+            write_file.write("\n")
+            print("VALID:", j)
+            if j in suspect_word_list.keys():
+                suspect_word_list[j] = suspect_word_list[j] + 1   # increment count
+            else:
+                suspect_word_list[j] = 1   #First time with this word so count = 1
         else:
-            suspect_word_list[j] = 1   #First time with this word so count = 1
-    else:
-        fail_file.write(j)
-        fail_file.write("\n")
-        print("INVALID__________________:", j)
-        if j in invalid_word_list:
-            invalid_word_list[j] = invalid_word_list[j] + 1
-        else:
-            invalid_word_list[j] = 1
+            fail_file.write(j)
+            fail_file.write("\n")
+            print("INVALID__________________:", j)
+            if j in invalid_word_list:
+                invalid_word_list[j] = invalid_word_list[j] + 1
+            else:
+                invalid_word_list[j] = 1
+except:
+    pass
 
 # sort from least to most common
 suspect_word_list = list(suspect_word_list.items())
