@@ -61,6 +61,7 @@ try:
             else:
                 invalid_word_list[j] = 1
 except:
+    print("Exception")
     pass
 
 # sort from least to most common
