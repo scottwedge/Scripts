@@ -74,3 +74,8 @@ invalid_word_list.sort(key = lambda x: x[1])
 
 print("Suspect word list:", suspect_word_list)
 print("INVALID word list:", invalid_word_list)
+
+print("Suspect word list word by word ____________________DEBUG______")
+for j in suspect_word_list:
+    print(j)
+
