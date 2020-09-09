@@ -72,8 +72,8 @@ invalid_word_list = list(invalid_word_list.items())
 suspect_word_list.sort(key = lambda x: x[1])
 invalid_word_list.sort(key = lambda x: x[1])
 
-print("Suspect word list follows:", suspect_word_list)
-print("INVALID word list follows:", invalid_word_list)
+print("Suspect word LIST follows:", suspect_word_list)
+print("INVALID word LIST follows:", invalid_word_list)
 
 print("Suspect word list word by word ____________________DEBUG______")
 for j in suspect_word_list:
