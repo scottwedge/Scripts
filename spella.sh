@@ -28,7 +28,6 @@ if [ $# -gt 0 ]; then
             help_usage
         else	    
             TEMP_FILE=$1
-	    echo "Reading data file $TEMP_FILE"
         fi
     fi
 else
@@ -61,4 +60,4 @@ rm -f ${OUTPUT_FILE}
 cat ${TEMP_FILE} | awk -F: '{ print $3, $1 ":" $2 }' > ${OUTPUT_FILE}
 
 # Then invoke the python script (using absolute path)
-/home/swedge/Documents/GIT/scripts/spellr.py
+/home/swedge/Documents/GIT/scripts/spella.py
